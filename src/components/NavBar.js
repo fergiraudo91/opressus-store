@@ -1,73 +1,80 @@
-import React from "react";
-import brand from "../assets/images/brand.png";
+import React, { useState } from "react";
+import { Button } from "./Button";
+import "./NavBar.css";
+import DropDown from "./DropDown";
+import { Link } from "react-router-dom";
+import logo from "../assets/images/logo.png";
+import { CartWidget } from "./CartWidget";
 
-export const NavBar = () => {
+function NavBar() {
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="#">
-        <img src={brand} width="30" height="30" alt="" />
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Inicio <span className="sr-only">(current)</span>
-            </a>
+    <>
+      <nav className="navbar">
+        <Link to="/" className="navbar-logo">
+          <img src={logo} alt="Opressus" />
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              Home
+            </Link>
+          </li>
+          <li
+            className="nav-item"
+            onClick={closeMobileMenu}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link to="/drinks/beer" className="nav-links">
+              Beers <i className="fas fa-beer"></i>
+            </Link>
+            {dropdown && <DropDown />}
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Vinos
-            </a>
+            <Link to="/drinks/wines" className="nav-links" onClick={closeMobileMenu}>
+              Wines <i className="fas fa-wine-bottle"></i>
+            </Link>
           </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+          <li className="nav-item">
+            <Link to="/drinks/spirits" className="nav-links" onClick={closeMobileMenu}>
+              Spirits Drinks <i className="fas fa-glass-whiskey"></i>
+            </Link>
+          </li>
+          <CartWidget onClick={closeMobileMenu}/>
+          <li className="nav-item">
+            <Link
+              to="/spirits"
+              className="nav-links-mobile"
+              onClick={closeMobileMenu}
             >
-              Cervezas
-            </a>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
-                Rubias
-              </a>
-              <a className="dropdown-item" href="#">
-                Rojas
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Negras
-              </a>
-            </div>
+              Sign Up
+            </Link>
           </li>
-          <li className="nav-item">
-          <a className="nav-link" href="#">
-            Packs
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">
-            Espirituosas
-          </a>
-        </li>
         </ul>
-      </div>
-    </nav>
+        <Button />
+      </nav>
+    </>
   );
-};
+}
+export default NavBar;
