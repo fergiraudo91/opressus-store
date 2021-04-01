@@ -1,0 +1,12 @@
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.btn-container button{
+    margin: 8px;
+}
+
+.result{
+    display: block;
+    text-align: center;
+}
