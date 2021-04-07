@@ -1,0 +1,134 @@
+[
+    {
+        "title" : "Cerveza BierHaus Scotch Ness Lata 473ml",
+        "type" : "red",
+        "prices": {
+            "unity" : 175,
+            "6 items": 1050,
+            "12 items": 2100
+        },
+        "description": "The BierHaus Scotch Ness is a sweet caramel scented beer, toffee and biscuit with low bitterness and medium to light body.",
+        "img" : "assets/images/beers/bierhaus.png"
+    },
+    {
+        "title" : "Cerveza Patagonia Hoppy Lager Lata 269ml",
+        "type" : "golden",
+        "prices": {
+            "unity" : 69,
+            "6 items": 414,
+            "12 items": 828
+        },
+        "description": "La Cerveza Hoppy Lager, de amargor moderado pero fácil de percibir. Tiene un aroma de carácter cítrico y frutal del lúpulo. Balanceado con una base bien maltosa, proveniente de la malta vienna. De final seco y cuerpo ligero.",
+        "img" : "assets/images/beers/hoppy.png"
+    },
+    {
+        "title" : "Cerveza Temple Honey Lata 473ml",
+        "type" : "golden",
+        "prices": {
+            "unity" : 148,
+            "6 items": 888,
+            "12 items": 1776
+        },
+        "description": "Te presentamos la nueva Cerveza Temple Honey, es una cerveza elaborada con miel orgánica que se agrega en la etapa de maduración, evitando que se transforme en alcohol, resalte el aroma y el sabor. Es una cerveza perfectamente balanceada, refrescante, de color dorado y aroma a malta y cítricos.",
+        "img" : "assets/images/beers/honey.png"
+    },
+    {
+        "title" : "Cerveza Jarva IPA 5 Johnnies Lata 473ml",
+        "type" : "IPA",
+        "prices": {
+            "unity" : 200,
+            "6 items": 1200,
+            "12 items": 2400
+        },
+        "description": "La cerveza JARVA 5 Johnnies es una IPA híbrida de color dorado intenso, y suave balance entre malta y lúpulos americanos. Dicho equilibrio le da una excepcional tomabilidad y sabor, y sus 5 tipos de lúpulos le otorgan un potente aroma cítrico, resinoso y a frutas tropicales.",
+        "img" : "assets/images/beers/jarvaipa.png"
+    },
+    {
+        "title" : "Cerveza Portlander Amber Ale Lata 473ml",
+        "type" : "red",
+        "prices": {
+            "unity" : 195,
+            "6 items": 1170,
+            "12 items": 2340
+        },
+        "description": "La Cerveza Portlander Amber Ale, es un estilo que combina lúpulos herbáceos especiados y frutados que, junto a una cuidadosa selección de maltas especiales, consigue un delicioso aroma a frutos secos. Sabor equilibrado con notas a pan tostado, caramelo y nueces. ",
+        "img" : "assets/images/beers/portlander.png"
+    },
+    {
+        "title" : "Cerveza BierHaus IPA Superstar Lata 473ml",
+        "type" : "IPA",
+        "prices": {
+            "unity" : 210,
+            "6 items": 1260,
+            "12 items": 250
+        },
+        "description": "La Cerveza BierHaus Superstar IPA, es una versión americana de la tradicional IPA inglesa. Es una cerveza de intenso amargor y aroma a lúpulos cítricos y frutales.",
+        "img" : "assets/images/beers/bierhausipa.png"
+    },
+    {
+        "title" : "Cerveza BierHaus Pilsen Raptor Lata 473ml",
+        "type" : "golden",
+        "prices": {
+            "unity" : 175,
+            "6 items": 1050,
+            "12 items": 2100
+        },
+        "description": "La Cerveza BierHaus Pilsen Raptor, es una cerveza fácil de tomar, es una Pilsen hecha en homenaje a el clásico estilo Checo de la región de Bohemia. Es una cerveza de color brillante y aroma a lúpulos nobles y florales, es un estilo con un amargor amistoso",
+        "img" : "assets/images/beers/pilserraptor.png"
+    },
+    {
+        "title" : "Cerveza BierHaus Red IPA Vulcano Lata 473ml",
+        "type" : "IPA",
+        "prices": {
+            "unity" : 210,
+            "6 items": 1260,
+            "12 items": 2520
+        },
+        "description": "La Cerveza BierHaus Red IPA Vulcano, es una cerveza de cuerpo medio ligero con notas de caramelo, grano tostado, cítricos y lúpulos frutales. Es ideal para tomar a cualquier hora del día.",
+        "img" : "assets/images/beers/bierhausred.png"
+    },
+    {
+        "title" : "Cerveza Goose Island IPA Lata 473ml",
+        "type" : "IPA",
+        "prices": {
+            "unity" : 170,
+            "6 items": 1020,
+            "12 items": 2040
+        },
+        "description": "Goose IPA es una cerveza de estilo American IPA, de un amargor pronunciado y un carácter a lúpulos europeos y americanos muy intenso. Aromática y deliciosa. Con un soporte de maltas que otorgan cuerpo y sostén al líquido presente.",
+        "img" : "assets/images/beers/gooseipa.png"
+    },
+    {
+        "title" : "Cerveza Portlander Stout Bohemia Lata 473ml",
+        "type" : "black",
+        "prices": {
+            "unity" : 195,
+            "6 items": 1170,
+            "12 items": 2340
+        },
+        "description": "La Cerveza Portlander Stout Bohemia, es una cerveza negra azabache con perfil aromático intenso a café y chocolate. Cuerpo sedoso y espuma cremosa, característica otorgada por la avena orgánica.",
+        "img" : "assets/images/beers/portlanderstout.png"
+    },
+    {
+        "title" : "Cerveza Portlander Pale Ale Lata 473ml",
+        "type" : "golden",
+        "prices": {
+            "unity" : 195,
+            "6 items": 1170,
+            "12 items": 2340
+        },
+        "description": "La Cerveza Portlander Stout Bohemia, es una cerveza negra azabache con perfil aromático intenso a café y chocolate. Cuerpo sedoso y espuma cremosa, característica otorgada por la avena orgánica.",
+        "img" : "assets/images/beers/portlanderstout.png"
+    },
+    {
+        "title" : "Cerveza Portlander Scottish Red Ale Lata 473ml",
+        "type" : "golden",
+        "prices": {
+            "unity" : 195,
+            "6 items": 1170,
+            "12 items": 2340
+        },
+        "description": "La Cerveza Portlander Scottish Red Ale, es una cerveza color ámbar con reflejos rubíes. Generosa espuma con dejos dulces y tostados. En boca presenta notas maltosas y matices caramelizados.",
+        "img" : "assets/images/beers/portlanderredale.png"
+    }
+]

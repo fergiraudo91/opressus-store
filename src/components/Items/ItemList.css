@@ -1,0 +1,10 @@
+.title{
+    margin-top: 16px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.items-container{
+    padding: 2rem;
+    background-color: white;
+}
