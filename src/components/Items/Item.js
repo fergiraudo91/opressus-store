@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     },
   });
 
-export const Item = () => {
+export const Item = ({imageUrl, title, description, prices}) => {
     const classes = useStyles();
 
   return (
