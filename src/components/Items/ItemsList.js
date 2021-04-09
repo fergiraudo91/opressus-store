@@ -1,15 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import "./ItemList.css";
 import { Item } from "./Item";
 import beers from '../../data/beers.json';
-
-/*
-
-<Grid item xs={12} sm={6} lg={3}>
-          <Item />
-        </Grid>*/
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,14 +18,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ItemsList = () => {
-  const getData = async () => {
-    const response = await fetch(beers);
-    const data = await response.json();
-    console.log(data);
-  }
+  
+  const [data, setData] = useState([]);
+
   
   useEffect(() => {
-    getData();
+    setTimeout(() => {
+      setData(beers);
+    }, 2000);
   }, [])
 
   const classes = useStyles();
@@ -42,7 +36,18 @@ export const ItemsList = () => {
           <h1 className="title">List of Beers</h1>
         </Grid>
         {
-
+          data.map((beer, i) => {
+            return(
+            <Grid item xs={12} sm={6} lg={3} key={i} >
+              <Item 
+              imageUrl={beer.img} 
+              title={beer.title}
+              description={beer.description}
+              prices={beer.prices}
+              />
+            </Grid>
+            )
+          })
         }
       </Grid>
     </div>
