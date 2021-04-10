@@ -5,6 +5,8 @@ import { SignUp } from "./components/pages/SignUp";
 import {Cart} from './components/pages/Cart';
 import { Drinks } from "./components/pages/Drinks";
 import { ItemsList } from "./components/Items/ItemsList";
+import { ItemDetailContainer } from "./components/Items/Detail/ItemDetailContainer";
+import beer from './data/beers.json'
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         </Switch>
       </Router>
       <ItemsList />
+      <ItemDetailContainer title={beer[0].title} type={beer[0].type} prices={beer[0].prices} description={beer[0].description} img={`http://c2060241.ferozo.com/${beer[0].img}`} />
     </div>
   );
 }

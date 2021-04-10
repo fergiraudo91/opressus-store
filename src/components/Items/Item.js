@@ -31,9 +31,9 @@ export const Item = ({imageUrl, title, description, prices}) => {
           <Typography gutterBottom variant="h6" component="h4">
           {title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          {/* <Typography variant="body2" color="textSecondary" component="p">
             {description}
-          </Typography>
+          </Typography> */}
         </CardContent>
       </CardActionArea>
       <CardActions>

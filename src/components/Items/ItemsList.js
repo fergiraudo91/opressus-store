@@ -31,7 +31,7 @@ export const ItemsList = () => {
   const classes = useStyles();
   return (
     <div className={classes.root + " items-container"}>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} justify="center">
         <Grid item xs={12}>
           <h1 className="title">List of Beers</h1>
         </Grid>
