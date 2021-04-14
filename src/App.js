@@ -1,36 +1,33 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import { SignUp } from "./components/pages/SignUp";
-import {Cart} from './components/pages/Cart';
-import { Drinks } from "./components/pages/Drinks";
-import { ItemsList } from "./components/Items/ItemsList";
-import { ItemDetailContainer } from "./components/Items/Detail/ItemDetailContainer";
-import beer from './data/beers.json'
+import NavBar from "./components/NavBar/NavBar";
+import { Contact } from "./pages/Contact";
+import { Cart } from "./pages/Cart";
+import { ItemsList } from "./components/Items/ListItems/ItemsList";
 import { ThemeProvider } from "@material-ui/styles";
 import { orange } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core";
+import { Home } from "./pages/Home";
 
 const theme = createMuiTheme({
   palette: {
-    primary: orange
-  }
-})
+    primary: orange,
+  },
+});
 
 function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route path='/sign-up' exact component={SignUp}/>
-          <Route path='/cart' exact component={Cart}/>
-          <Route path='/drinks/:type' exact component={Drinks} />
-        </Switch>
-      </Router>
-      <ItemsList />
-      <ItemDetailContainer title={beer[0].title} type={beer[0].type} prices={beer[0].prices} description={beer[0].description} img={`http://c2060241.ferozo.com/${beer[0].img}`} />
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/contact" exact component={Contact} />
+            <Route path="/cart" exact component={Cart} />
+            <Route path="/drinks/:type" exact component={ItemsList} />
+          </Switch>
+        </Router>
       </ThemeProvider>
     </div>
   );

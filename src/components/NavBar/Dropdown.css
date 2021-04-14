@@ -1,0 +1,41 @@
+.dropdown-men{
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    list-style: none;
+    text-align: start;
+    z-index: 102;
+}
+
+.dropdown-men li{
+    cursor: pointer;
+    background-color: #F9A602;
+    padding: 8px;
+    padding-left: 16px;
+}
+
+.dropdown-men li a{
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-men li:hover{
+    background: #FFC594;
+}
+
+.dropdown-men li:hover a{
+    color: black;
+}
+
+.dropdown-men.clicked{
+    display: none;
+}
+
+.dropdown-link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+}
