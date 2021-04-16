@@ -24,6 +24,7 @@ export const ItemDetailContainer = () => {
   const classes = useStyles();
   const { drinkId } = useParams();
   const [drink, setDrink] = useState([]);
+  const [price, setPrice] = useState(0);
 
   useEffect(() => {
     getUserByID(drinkId);
@@ -37,9 +38,10 @@ export const ItemDetailContainer = () => {
     setDrink(bebida);
   };
 
-  const handleChange = () => {
-
-  }
+  const handleChange = (event) => {
+    setPrice(event.target.value);
+    console.log(price);
+  };
   
   console.log(drink);
   return (
@@ -50,29 +52,15 @@ export const ItemDetailContainer = () => {
           <h2>Type: {drink.type}</h2>
           <img src={`../${drink.img}`} alt={drink.title} />
           <p>Description: {drink.description} </p>
-          {
-            drink.prices[0] > 0 ?
+          { Object.keys(drink).length > 0 ?
             <FormControl component="fieldset">
             <FormLabel component="legend">Precios</FormLabel>
-            <RadioGroup
-              aria-label="precios"
-              name="precio"
-              value="prueba"
-              onChange={handleChange}
-            >
-              <FormControlLabel
-                value={drink.prices[0]}
-                control={<Radio />}
-                label={`Unidad: $${drink.prices[0]}`}
-              />
+            <RadioGroup aria-label="precios" name="precios1" value={price} onChange={handleChange}>
+              <FormControlLabel value={drink.prices[0]} control={<Radio />} label={`Unidad: $${drink.prices[0]}`}/>
               <FormControlLabel value={drink.prices[1]} control={<Radio />} label={`6 Unidades: $${drink.prices[1]}`} />
-              <FormControlLabel
-                value={drink.prices[2]}
-                control={<Radio />}
-                label={`12 Unidades: $${drink.prices[2]}`}
-              />
+              <FormControlLabel value={drink.prices[2]} control={<Radio />} label={`12 Unidades: $${drink.prices[2]}`} />
             </RadioGroup>
-      </FormControl> : <div></div>}
+          </FormControl> : <div></div>}
         </>
       }
     </div>
