@@ -226,5 +226,53 @@
         },
         "description": "Vino tinto de color rojo brillante. Sus aromas son intensos y amables, con notas a frutos rojos, y tonos algo florales y especiados. En boca es generoso, fluido y expresivo. De paladar franco y paso refrescante.",
         "img" : "assets/images/wines/luigi-bosca.jpg"
+    },
+    {
+        "id" : 20,
+        "title" : "Jameson Irish Whiskey",
+        "type" : "spirits",
+        "prices": {
+            "unity" : 1700,
+            "6 items": 9180,
+            "12 items": 16500
+        },
+        "description": "Whiskey irlandés Jameson es una mezcla de whiskies de alambique y de grano, es tan versátil como suave debido a su triple destilación. Es un perfecto equilibrio de notas especiadas, de nuez y vainilla con toques de jerez dulce y la suavidad excepcional, no ahumado.",
+        "img" : "assets/images/spirits/jameson.jpg"
+    },
+    {
+        "id" : 21,
+        "title" : "Whisky Jack Daniels 750 Ml",
+        "type" : "spirits",
+        "prices": {
+            "unity" : 5600,
+            "6 items": 30240,
+            "12 items": 54400
+        },
+        "description": "Jack Daniel's es una destilería y marca de whiskey estadounidense de Tennessee. La diferencia más notable es que el whisky Tennessee es filtrado en carbón de arce sacarino, dándole un sabor y aroma distintivos. Conocida por sus botellas cuadradas y su etiqueta de color negro.",
+        "img" : "assets/images/spirits/jack.jpg"
+    },
+    {
+        "id" : 22,
+        "title" : "Absolut Vodka Regular",
+        "type" : "spirits",
+        "prices": {
+            "unity" : 1200,
+            "6 items": 6480,
+            "12 items": 11600
+        },
+        "description": "Un Vodka superior, destilado de granos en los ricos campos de Suecia. A diferencia de la mayoría de los Vodkas y otras espirituosas, no contiene azúcar agregado, lo cual lo convierte en un Vodka perfecto para preparar cócteles. Los ingredientes principales de Absolut Vodka son agua y trigo de invierno. El agua proviene de un profundo pozo de Åhus, protegida contra las impurezas. Este trigo de invierno se distingue de otras cosechas: se siembra en otoño y se recolecta en el siguiente. Mientras tanto va creciendo bajo la nieve sueca desarrollando un grano duro. Además, el uso de fertilizantes es mínimo.",
+        "img" : "assets/images/spirits/absolut.jpg"
+    },
+    {
+        "id" : 23,
+        "title" : "Royal Salute Whisky Escocés 21 Años Ruby Bot 700ml + Estuche",
+        "type" : "spirits",
+        "prices": {
+            "unity" : 19000,
+            "6 items": 102600,
+            "12 items": 11600
+        },
+        "description": "Creado en homenaje a la coronación de Su Majestad la Reina Isabel II en 1953, Royal Salute 21 Años se distingue por la fragancia floral de otoño que señalan aromas frutales intensos y profundos. Elaborado de los mejores whiskies, fiel a la tradición única de la marca la cual únicamente utiliza whiskies que han madurado pacientemente durante al menos 21 años. Es un whisky preciado presentado en distintiva botella de porcelana que lleva un esmalte esmeralda. Viene con su estuche.",
+        "img" : "assets/images/spirits/royal.jpg"
     }
 ]

@@ -44,6 +44,9 @@ export const ItemsList = () => {
           case "wines":
             filter = data.filter((item) => item.type === "wine");
             break;
+            case "spirits":
+            filter = data.filter((item) => item.type === "spirits");
+            break;
           case "ipa":
             filter = data.filter((item) => item.type === "IPA");
             break;
@@ -76,6 +79,7 @@ export const ItemsList = () => {
           return (
             <Grid item xs={12} sm={6} lg={3} key={beer.id}>
               <Item
+                id={beer.id}
                 imageUrl={beer.img}
                 title={beer.title}
                 description={beer.description}

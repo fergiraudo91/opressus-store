@@ -8,18 +8,22 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import './Item.css';
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
     },
   });
 
-export const Item = ({imageUrl, title, description, prices}) => {
+
+
+export const Item = ({imageUrl, title, description, prices, id}) => {
     const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <Link to={`drink/${id}`}>
+      <CardActionArea >
         <CardMedia
           component="img"
           alt="beer"
@@ -36,6 +40,7 @@ export const Item = ({imageUrl, title, description, prices}) => {
           </Typography> */}
         </CardContent>
       </CardActionArea>
+      </Link>
       <CardActions>
         <Button size="large" variant="contained" color="primary" className="buy-btn" fullWidth>
           Buy

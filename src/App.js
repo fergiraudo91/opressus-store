@@ -8,6 +8,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { orange } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core";
 import { Home } from "./pages/Home";
+import { ItemDetailContainer } from "./components/Items/ItemDetail/ItemDetailContainer";
 
 const theme = createMuiTheme({
   palette: {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/contact" exact component={Contact} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/drinks/:type" exact component={ItemsList} />
+            <Route path="/drinks/drink/:drinkId" exact component={ItemDetailContainer} />
           </Switch>
         </Router>
       </ThemeProvider>
