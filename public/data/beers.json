@@ -134,7 +134,7 @@
     {
         "id" : 12,
         "title" : "Cerveza Portlander Scottish Red Ale Lata 473ml",
-        "type" : "golden",
+        "type" : "red",
         "prices": {
             "unity" : 195,
             "6 items": 1170,
@@ -142,5 +142,89 @@
         },
         "description": "La Cerveza Portlander Scottish Red Ale, es una cerveza color ámbar con reflejos rubíes. Generosa espuma con dejos dulces y tostados. En boca presenta notas maltosas y matices caramelizados.",
         "img" : "assets/images/beers/portlanderredale.png"
+    },
+    {
+        "id" : 13,
+        "title" : "Vino Novecento Raices Malbec",
+        "type" : "wine",
+        "prices": {
+            "unity" : 276,
+            "6 items": 1406,
+            "12 items": 2800
+        },
+        "description": "De color rojo con atractivos matices violáceos. En nariz se expresa con las aromas caraterísticos a frutos rojos como ciruelas.De taninos amables y suaves gracias a su excelente madurez de la fruta.",
+        "img" : "assets/images/wines/novecento-raices-malbec.jpg"
+    },
+    {
+        "id" : 14,
+        "title" : "Vino Novecento Malbec",
+        "type" : "wine",
+        "prices": {
+            "unity" : 203,
+            "6 items": 1035,
+            "12 items": 260
+        },
+        "description": "De color rojo atractivo con tonos vivos. Sus aromas nos recuerdan a frutos negros y frutas rojas maduras como la ciruela y la mora. Se presenta aterciopelado y frutado.",
+        "img" : "assets/images/wines/novecento-malbec.jpg"
+    },
+    {
+        "id" : 15,
+        "title" : "Vino Capriccio Dolcezza",
+        "type" : "wine",
+        "prices": {
+            "unity" : 232,
+            "6 items": 1315,
+            "12 items": 1600
+        },
+        "description": "De color amarillo pálido con reﬂejos verdosos y brillantes. Este vino se caracteriza por la presencia de aromas ﬂorales y frutales como la flor de azahar y los duraznos blancos como también notas cítricas y suaves hierbas que realzan su personalidad. En boca, además de su persistencia y elegancia, encontramos una sensación de equilibrio entre el dulzor y la acidez justa que nos aportan frescura y nos invita a seguir disfrutándolo.",
+        "img" : "assets/images/wines/capriccio.jpg"
+    },
+    {
+        "id" : 16,
+        "title" : "Espumante 2020 LPQTP Extra Brut",
+        "type" : "wine",
+        "prices": {
+            "unity" : 406,
+            "6 items": 2192,
+            "12 items": 4000
+        },
+        "description": "2020 LPQTP es un Extra Brut de color dorado brillante, fresco, con delicadas notas frutales y cítricas, pensado para ocasiones tan sublimes como la de enviar esta año calendario del dos-mil-veinte a lugares especiales, oníricos. ",
+        "img" : "assets/images/wines/2020lpqtp.jpg"
+    },
+    {
+        "id" : 17,
+        "title" : "Espumante Dante Robino Extra Brut",
+        "type" : "wine",
+        "prices": {
+            "unity" : 451,
+            "6 items": 2299,
+            "12 items": 4400
+        },
+        "description": "De color dorado, elegante, delicado, con reﬂejos oro brillantes. Su paleta de aromas, nos ofrece frutas cítricas, con un delicado dejo de pan tostado. Agradable en boca, con una burbuja integrada y cremosa. Su sabor es prolongado y frutal.",
+        "img" : "assets/images/wines/espumante-dante-robino-extra-brut.jpg"
+    },
+    {
+        "id" : 18,
+        "title" : "Otro Loco Mas Malbec 750 Ml",
+        "type" : "wine",
+        "prices": {
+            "unity" : 235,
+            "6 items": 1269,
+            "12 items": 2284
+        },
+        "description": "Presenta un color rubí oscuro con atractivos destellos púrpura. Aroma agradable con notas sobresalientes de frutos rojos y vainilla. Buen aporte del roble. En boca presenta un cuerpo amable, sabroso, con un dejo dulzón que invita a tomar",
+        "img" : "assets/images/wines/otro-loco-mas.jpg"
+    },
+    {
+        "id" : 19,
+        "title" : "Luigi Bosca Doc Malbec 750ml Tinto",
+        "type" : "wine",
+        "prices": {
+            "unity" : 1200,
+            "6 items": 5800,
+            "12 items": 10000
+        },
+        "description": "Vino tinto de color rojo brillante. Sus aromas son intensos y amables, con notas a frutos rojos, y tonos algo florales y especiados. En boca es generoso, fluido y expresivo. De paladar franco y paso refrescante.",
+        "img" : "assets/images/wines/luigi-bosca.jpg"
     }
 ]
