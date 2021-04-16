@@ -27,7 +27,7 @@ function App() {
             <Route path="/contact" exact component={Contact} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/drinks/:type" exact component={ItemsList} />
-            <Route path="/drinks/drink/:drinkId" exact component={ItemDetailContainer} />
+            <Route path="/drink/:drinkId" exact component={ItemDetailContainer} />
           </Switch>
         </Router>
       </ThemeProvider>

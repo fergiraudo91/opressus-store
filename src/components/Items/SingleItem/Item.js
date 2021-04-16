@@ -22,7 +22,7 @@ export const Item = ({imageUrl, title, description, prices, id}) => {
 
   return (
     <Card className={classes.root}>
-      <Link to={`drink/${id}`}>
+      <Link to={`../drink/${id}`}>
       <CardActionArea >
         <CardMedia
           component="img"

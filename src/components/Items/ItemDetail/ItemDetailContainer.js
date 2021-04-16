@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { ItemDetail } from "./ItemDetail";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
 import { useParams } from "react-router";
-import { getItemById } from "../../../helpers/getItemById";
+import {
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,34 +22,59 @@ const useStyles = makeStyles((theme) => ({
 
 export const ItemDetailContainer = () => {
   const classes = useStyles();
-  const {drinkId} = useParams();
-  const [drink, setDrink] = useState({});
+  const { drinkId } = useParams();
+  const [drink, setDrink] = useState([]);
+
   useEffect(() => {
-    let bebida;
-    fetch("../data/beers.json", {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data => {
-       setDrink(data.find(item => item.id === +drinkId))
-    }))
+    getUserByID(drinkId);
+  }, [drinkId]);
+
+  const getUserByID = async (id) => {
+    const data = await fetch("../data/beers.json");
+    const bebidas = await data.json();
+    const bebida = bebidas.find((item) => item.id === +id);
+    console.log(bebidas);
     setDrink(bebida);
-  }, [drinkId])
+  };
 
+  const handleChange = () => {
+
+  }
+  
   console.log(drink);
-
-  return(
-    <div className="container">
-      <h1>Bebida: {drink ? drink.title : ''}</h1>
-      <h1>Tipo: {drink ? drink.type : ''}</h1>
-      <h1>Precio: </h1>
-      <img src={drink ? `../${drink.img}` : ''} alt={drink ? drink.title : ''} />
-      <h4>Description: {drink ? drink.description : ''}</h4>
+  return (
+    <div className="container mt-5">
+      {
+        <>
+          <h2>Bebida: {drink.title}</h2>
+          <h2>Type: {drink.type}</h2>
+          <img src={`../${drink.img}`} alt={drink.title} />
+          <p>Description: {drink.description} </p>
+          {
+            drink.prices[0] > 0 ?
+            <FormControl component="fieldset">
+            <FormLabel component="legend">Precios</FormLabel>
+            <RadioGroup
+              aria-label="precios"
+              name="precio"
+              value="prueba"
+              onChange={handleChange}
+            >
+              <FormControlLabel
+                value={drink.prices[0]}
+                control={<Radio />}
+                label={`Unidad: $${drink.prices[0]}`}
+              />
+              <FormControlLabel value={drink.prices[1]} control={<Radio />} label={`6 Unidades: $${drink.prices[1]}`} />
+              <FormControlLabel
+                value={drink.prices[2]}
+                control={<Radio />}
+                label={`12 Unidades: $${drink.prices[2]}`}
+              />
+            </RadioGroup>
+      </FormControl> : <div></div>}
+        </>
+      }
     </div>
-  )
-}
-
-
+  );
+};
