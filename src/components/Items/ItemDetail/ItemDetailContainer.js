@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useParams } from "react-router";
+import './Item.css';
 import {
   Radio,
   RadioGroup,
@@ -38,29 +39,79 @@ export const ItemDetailContainer = () => {
     setDrink(bebida);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(price);
+  };
   const handleChange = (event) => {
     setPrice(event.target.value);
     console.log(price);
   };
-  
+
   console.log(drink);
   return (
-    <div className="container mt-5">
+    <div className="mt-5 ml-5 mr-5 mb-5">
       {
         <>
-          <h2>Bebida: {drink.title}</h2>
-          <h2>Type: {drink.type}</h2>
-          <img src={`../${drink.img}`} alt={drink.title} />
-          <p>Description: {drink.description} </p>
-          { Object.keys(drink).length > 0 ?
-            <FormControl component="fieldset">
-            <FormLabel component="legend">Precios</FormLabel>
-            <RadioGroup aria-label="precios" name="precios1" value={price} onChange={handleChange}>
-              <FormControlLabel value={drink.prices[0]} control={<Radio />} label={`Unidad: $${drink.prices[0]}`}/>
-              <FormControlLabel value={drink.prices[1]} control={<Radio />} label={`6 Unidades: $${drink.prices[1]}`} />
-              <FormControlLabel value={drink.prices[2]} control={<Radio />} label={`12 Unidades: $${drink.prices[2]}`} />
-            </RadioGroup>
-          </FormControl> : <div></div>}
+          <div className="row">
+            <div className="col-12 col-xl-6 image">
+              <img src={`../${drink.img}`} alt={drink.title} />
+            </div>
+            <div className="col-12 col-xl-6">
+              <h2>Bebida: {drink.title}</h2>
+              <h2>Type: {drink.type}</h2>
+
+              <p>Description: {drink.description} </p>
+              {Object.keys(drink).length > 0 ? (
+                <form onSubmit={handleSubmit}>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="exampleRadios"
+                      id="precio1"
+                      value={drink.prices[0]}
+                      onChange={handleChange}
+                    />
+                    <label className="form-check-label" htmlFor="precio1">
+                      Unidad: ${drink.prices[0]}
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="exampleRadios"
+                      id="precio2"
+                      value={drink.prices[1]}
+                      onChange={handleChange}
+                    />
+                    <label className="form-check-label" htmlFor="precio2">
+                      6 Unidades: ${drink.prices[1]}
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="exampleRadios"
+                      id="precio3"
+                      value={drink.prices[2]}
+                      onChange={handleChange}
+                    />
+                    <label className="form-check-label" htmlFor="precio3">
+                      12 Unidades: ${drink.prices[2]}
+                    </label>
+                  </div>
+                  <button className="btn mt-3" type="submit">
+                    Comprar
+                  </button>
+                </form>
+              ) : (
+                <div></div>
+              )}
+            </div>
+          </div>
         </>
       }
     </div>
