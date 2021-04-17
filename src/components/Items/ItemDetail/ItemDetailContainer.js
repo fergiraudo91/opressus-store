@@ -2,13 +2,6 @@ import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useParams } from "react-router";
 import './Item.css';
-import {
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-  FormControl,
-  FormLabel,
-} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
