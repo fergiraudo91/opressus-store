@@ -26,7 +26,7 @@ export const ItemCount = ({drink, handleChange}) => {
         onChange={handleChange}
       />
       <label className="form-check-label" htmlFor="precio1">
-        {cantidad} unidades: ${precio}
+        {cantidad} {cantidad === 1 ? 'unidad' : 'unidades'}: ${precio}
         <button 
         type="button"
         className="btn ml-3 mr-3"
