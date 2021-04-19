@@ -57,8 +57,8 @@ export const ItemDetailContainer = () => {
                       value={drink.prices[1]}
                       onChange={handleChange}
                     />
-                    <label className="form-check-label" htmlFor="precio2" style={{color:"#E67E22"}}>
-                      Promo 6 Unidades: ${drink.prices[1]} 10% Off
+                    <label className="form-check-label" htmlFor="precio2" >
+                      Promo 6 Unidades: ${drink.prices[1]} 
                     </label>
                   </div>
                   <div className="form-check mb-2">
@@ -70,8 +70,8 @@ export const ItemDetailContainer = () => {
                       value={drink.prices[2]}
                       onChange={handleChange}
                     />
-                    <label className="form-check-label" htmlFor="precio3" style={{color:"#DC3545"}}>
-                      Promo 12 Unidades: ${drink.prices[2]} 20% Off
+                    <label className="form-check-label" htmlFor="precio3" >
+                      Promo 12 Unidades: ${drink.prices[2]} 
                     </label>
                   </div>
                   <button className="btn mt-3" type="submit">

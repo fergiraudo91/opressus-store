@@ -7,6 +7,13 @@
     z-index: 102;
 }
 
+.typebeer{
+    color: white;
+}
+.typebeer:hover{
+    color: black;
+}
+
 .dropdown-men li{
     cursor: pointer;
     background-color: #F9A602;
