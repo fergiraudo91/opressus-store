@@ -72,7 +72,7 @@ function NavBar() {
             </Link>
           </li>
         </ul>
-        <Button action="Contact" link="contact" />
+        <Button action="Contact" link="/contact" />
       </nav>
     </>
   );
