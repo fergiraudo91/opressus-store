@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export const ItemCount = ({drink, handleChange}) => {
+export const ItemCount = ({drink, handleChange, setQuantity, price, setPrice}) => {
     const initialPrice = drink.prices[0];
-    const [precio, setPrecio] = useState(initialPrice);
+    useEffect(() => {
+      setPrice(initialPrice);
+    }, [setPrice, initialPrice])
+
+
+
     const [cantidad, setCantidad] = useState(1);
     const onAdd = () => {
         setCantidad(cantidad + 1);
-        setPrecio(initialPrice * (cantidad + 1));
+        setPrice(initialPrice * (cantidad + 1));
+        setQuantity(cantidad + 1);
     }
     const onSubstract = () => {
         if(cantidad <= 1){
             return;
         }
         setCantidad(cantidad - 1);
-        setPrecio(initialPrice * (cantidad - 1));
+        setPrice(initialPrice * (cantidad - 1));
     }
   return (
     <>
@@ -22,11 +28,11 @@ export const ItemCount = ({drink, handleChange}) => {
         type="radio"
         name="exampleRadios"
         id="precio1"
-        value={precio}
+        value={price}
         onChange={handleChange}
       />
       <label className="form-check-label" htmlFor="precio1">
-        {cantidad} {cantidad === 1 ? 'unidad' : 'unidades'}: ${precio}
+        {cantidad} {cantidad === 1 ? 'unidad' : 'unidades'}: ${price}
         <button 
         type="button"
         className="btn ml-3 mr-3"
