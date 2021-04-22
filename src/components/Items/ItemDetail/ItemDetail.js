@@ -30,6 +30,11 @@ export const ItemDetail = () => {
       setCart([{ ...drink, prices: price, quantity }]);
       alert("El producto ha sido agregado correctamente");
     } else {
+      let busqueda = cart.find(item => item.id === drink.id);
+      if(busqueda){
+        alert("El item ya fue agregado con anterioridad, verifique en el carrito");
+        return;
+      }
       setCart([...cart, { ...drink, prices: price, quantity }]);
       alert("El producto ha sido agregado correctamente");
     }

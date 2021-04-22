@@ -6,7 +6,12 @@ export const Cart = () => {
     const {cart, setCart} = useContext(CartContext);
     const handleDelete = (id) => {
         const filteredItems = cart.filter(item => item.id !== id);
-        setCart(filteredItems);
+        if(filteredItems.length === 0){
+            setCart([{}]);
+        }
+        else{
+            setCart(filteredItems);
+        }
     }
     const clear = () => {
         setCart([{}]);
@@ -23,7 +28,7 @@ export const Cart = () => {
                <ul>
                    {
                        cart.map(el =>{
-                           return <li key={el.id}>Item: {el.title} cantidad: {el.quantity} Precio: {el.prices} <DeleteIcon  onClick={() => handleDelete(el.id)}/></li>
+                           return <li key={el.id}>Item: {el.title} cantidad: {el.quantity} Precio: ${el.prices} <DeleteIcon  onClick={() => handleDelete(el.id)}/></li>
                        })
                    }
                </ul>
