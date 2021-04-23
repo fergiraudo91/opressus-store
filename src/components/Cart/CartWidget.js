@@ -7,14 +7,9 @@ export const CartWidget = (props) => {
   const { cart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(0);
   useEffect(() => {
-    if (cart.length === 1) {
-      if (!!cart[0].prices) {
-        setQuantity(cart[0].quantity);
-      }
-    } else {
-      setQuantity(cart.reduce((prev, next) => prev.quantity + next.quantity));
-    }
-  }, [cart, quantity])
+    let datos = cart.map(el => el.quantity);
+    setQuantity(datos.reduce((prev, next) => prev + next))
+  }, [cart])
 
 
   
