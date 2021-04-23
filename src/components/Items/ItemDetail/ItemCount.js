@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-export const ItemCount = ({drink, handleChange, setQuantity, price, setPrice}) => {
+export const ItemCount = ({drink, handleChange, setQuantity}) => {
     const initialPrice = drink.prices[0];
+    const [price, setPrice] = useState(initialPrice);
     useEffect(() => {
       setPrice(initialPrice);
     }, [setPrice, initialPrice])
