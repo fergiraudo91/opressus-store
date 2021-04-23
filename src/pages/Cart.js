@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../components/context/CartContext';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { Link } from 'react-router-dom';
 
 export const Cart = () => {
     const {cart, setCart} = useContext(CartContext);
@@ -16,7 +17,7 @@ export const Cart = () => {
     const clear = () => {
         setCart([{}]);
     }
-    
+    let prices = cart.map(el => +el.prices);
     return (
         <div className="container mt-5">
            <h1>Cart</h1> 
@@ -36,11 +37,17 @@ export const Cart = () => {
                className="btn btn-danger"
                onClick={clear}
                >Eliminar todo</button> <button className="btn">Comprar</button>
+                <div className="total">
+                   <h4>Total: ${prices.reduce((prev, next) => prev + next)}</h4>
+                </div>
                </div>
+              
                )
-               
                :
+               <div>
                <h2>Carrito Vacío</h2>
+               <Link to="/"><button className="btn">Volver a la tienda</button></Link>
+               </div>
            }
         </div>
     )
