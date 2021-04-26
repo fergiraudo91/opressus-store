@@ -1,0 +1,38 @@
+.item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px !important;
+}
+
+.item-container li{
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.item-info{
+    width: 80%;
+}
+
+.delete-icon{
+    color: #CB3234;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.total{
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 770px) {
+    .item-container li{
+        font-size: 0.9rem;
+    }
+}

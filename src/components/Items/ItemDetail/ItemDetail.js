@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 //import { makeStyles } from "@material-ui/core/styles";
 import { useParams } from "react-router";
 import { CartContext } from "../../context/CartContext";
+import { ModalBtn} from "../../Modal/ModalBtn";
 import "./Item.css";
 import { ItemCount } from "./ItemCount";
 
@@ -12,6 +13,7 @@ export const ItemDetail = () => {
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const { setCart, cart } = useContext(CartContext);
+  const [modalMessage, setmodalMessage] = useState("El item ha sido añadido al carrito");
 
   useEffect(() => {
     getUserByID(drinkId);
@@ -28,15 +30,17 @@ export const ItemDetail = () => {
     e.preventDefault();
     if (Object.entries(cart[0]).length === 0) {
       setCart([{ ...drink, prices: price, quantity }]);
-      alert("El producto ha sido agregado correctamente");
+      //alert("El producto ha sido agregado correctamente");
     } else {
       let busqueda = cart.find(item => item.id === drink.id);
       if(busqueda){
-        alert("El item ya fue agregado con anterioridad, verifique en el carrito");
+        setmodalMessage("El item ya ha sido añadido con anterioridad, por favor verifique el carrito");
         return;
       }
-      setCart([...cart, { ...drink, prices: price, quantity }]);
-      alert("El producto ha sido agregado correctamente");
+      else{
+        setCart([...cart, { ...drink, prices: price, quantity }]);
+      }
+     // alert("El producto ha sido agregado correctamente");
     }
     
   };
@@ -106,9 +110,11 @@ export const ItemDetail = () => {
                 Promo 12 Unidades: ${drink.prices[2]}
               </label>
             </div>
-            <button className="btn mt-3" type="submit">
+            <ModalBtn modalMessage={modalMessage} />
+            {/*<button className="btn mt-3" type="submit">
               Comprar
             </button>
+        */}
           </form>
         ) : (
           <div></div>

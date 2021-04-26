@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../components/context/CartContext';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Link } from 'react-router-dom';
+import './Cart.css';
 
 export const Cart = () => {
     const {cart, setCart} = useContext(CartContext);
@@ -26,15 +27,21 @@ export const Cart = () => {
                Object.keys(cart[0]).length > 0 ?
                (
                <div>
-               <ul>
+               <ul className="item-container">
                    {
                        cart.map(el =>{
-                           return <li key={el.id}>Item: {el.title} cantidad: {el.quantity} Precio: ${el.prices} <DeleteIcon  onClick={() => handleDelete(el.id)}/></li>
+                           return (<li 
+                            key={el.id}> 
+                            <div className="item-info">Item: {el.title} cantidad: {el.quantity} Precio: ${el.prices}</div> 
+                            <div className="delete-btn"><DeleteIcon  
+                            onClick={() => handleDelete(el.id)} 
+                            className="delete-icon"/></div>
+                            </li>)
                        })
                    }
                </ul>
                <button 
-               className="btn btn-danger"
+               className="btn btn-danger mr-3"
                onClick={clear}
                >Eliminar todo</button> <button className="btn">Comprar</button>
                 <div className="total">

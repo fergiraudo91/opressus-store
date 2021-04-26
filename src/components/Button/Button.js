@@ -5,7 +5,7 @@ import React from 'react'
 export const Button = ({action, link}) => {
     return (
         <Link to={link}>
-            <button className='btn'>{action}</button>
+            <button className='btn btn-contact'>{action}</button>
         </Link>
     )
 }

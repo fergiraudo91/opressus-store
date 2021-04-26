@@ -163,7 +163,7 @@
       transition: 250ms;
     }
 
-    .btn{
+    .btn.btn-contact{
         display: none;
     }
   }
