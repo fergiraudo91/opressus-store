@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 //import { makeStyles } from "@material-ui/core/styles";
 import { useParams } from "react-router";
+import { db } from "../../../firebase/firebase";
 import { CartContext } from "../../context/CartContext";
 import { ModalBtn} from "../../Modal/ModalBtn";
 import "./Item.css";
@@ -14,17 +15,18 @@ export const ItemDetail = () => {
   const [quantity, setQuantity] = useState(0);
   const { setCart, cart } = useContext(CartContext);
   const [modalMessage, setmodalMessage] = useState("El item ha sido añadido al carrito");
-
-  useEffect(() => {
-    getUserByID(drinkId);
-  }, [drinkId]);
-
-  const getUserByID = async (id) => {
-    const data = await fetch("../data/beers.json");
-    const bebidas = await data.json();
-    const bebida = bebidas.find((item) => item.id === +id);
+  
+  const getUserByID = async () => {
+    const itemCollection = await db.collection("items");
+    const item = await itemCollection.doc(drinkId);
+    const doc = await item.get();
+    const bebida = {...doc.data(), id: doc.id}
     setDrink(bebida);
   };
+
+  useEffect(() => {
+      getUserByID();
+  }, [drinkId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,7 +76,7 @@ export const ItemDetail = () => {
         <p>Description: {drink.description} </p>
         {Object.keys(drink).length > 0 ? (
           <form onSubmit={handleSubmit}>
-            <div className="form-check mb-2">
+            <div className="form-check mb-3">
               <ItemCount 
               drink={drink} 
               handleChange={handleChange} 
@@ -84,7 +86,7 @@ export const ItemDetail = () => {
               setPrice={setPrice}
               />
             </div>
-            <div className="form-check mb-2">
+            <div className="form-check mb-3">
               <input
                 className="form-check-input"
                 type="radio"
@@ -94,10 +96,10 @@ export const ItemDetail = () => {
                 onChange={handleChange}
               />
               <label className="form-check-label" htmlFor="precio2">
-                Promo 6 Unidades: ${drink.prices[1]}
+                Promo 6 Unidades: ${drink.prices[1]} <span className="discont">10% off</span>
               </label>
             </div>
-            <div className="form-check mb-2">
+            <div className="form-check mb-3">
               <input
                 className="form-check-input"
                 type="radio"
@@ -107,7 +109,7 @@ export const ItemDetail = () => {
                 onChange={handleChange}
               />
               <label className="form-check-label" htmlFor="precio3">
-                Promo 12 Unidades: ${drink.prices[2]}
+                Promo 12 Unidades: ${drink.prices[2]} <span className="discont">10% off</span>
               </label>
             </div>
             <ModalBtn modalMessage={modalMessage} />

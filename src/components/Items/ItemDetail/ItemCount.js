@@ -36,12 +36,12 @@ export const ItemCount = ({drink, handleChange, setQuantity}) => {
         {cantidad} {cantidad === 1 ? 'unidad' : 'unidades'}: ${price}
         <button 
         type="button"
-        className="btn ml-3 mr-3"
+        className="btn ml-3 mr-3 pl-2 pr-2 pt-1 pb-1"
         onClick={onAdd}
         >+</button>
         <button 
         type="button"
-        className="btn"
+        className="btn mr-3 pl-2 pr-2 pt-1 pb-1"
         onClick={onSubstract}
         >-</button>
       </label>

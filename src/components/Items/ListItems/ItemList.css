@@ -9,3 +9,27 @@
     padding: 2rem;
     background-color: white;
 }
+
+.circular-container{
+    margin-top: 90px;
+    display: flex;
+    width: 100%;
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress{
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto;
+}
+
+.discont{
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #B32428;
+    border-radius: 5px;
+    margin-left: 5px;
+}
