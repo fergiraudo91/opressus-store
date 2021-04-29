@@ -1,9 +1,10 @@
+import { CircularProgress } from "@material-ui/core";
 import React, { useContext, useEffect, useState } from "react";
 //import { makeStyles } from "@material-ui/core/styles";
 import { useParams } from "react-router";
 import { db } from "../../../firebase/firebase";
 import { CartContext } from "../../context/CartContext";
-import { ModalBtn} from "../../Modal/ModalBtn";
+import { ModalBtn } from "../../Modal/ModalBtn";
 import "./Item.css";
 import { ItemCount } from "./ItemCount";
 
@@ -15,17 +16,19 @@ export const ItemDetail = () => {
   const [quantity, setQuantity] = useState(0);
   const { setCart, cart } = useContext(CartContext);
   const [modalMessage, setmodalMessage] = useState("El item ha sido añadido al carrito");
-  
-  const getUserByID = async () => {
-    const itemCollection = await db.collection("items");
-    const item = await itemCollection.doc(drinkId);
-    const doc = await item.get();
-    const bebida = {...doc.data(), id: doc.id}
-    setDrink(bebida);
-  };
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      getUserByID();
+    (async () => {
+      setLoading(true);
+      const itemCollection = await db.collection("items");
+      const item = await itemCollection.doc(drinkId);
+      const doc = await item.get();
+      const bebida = { ...doc.data(), id: doc.id }
+      setDrink(bebida);
+      setLoading(false);
+    }
+    )();
   }, [drinkId]);
 
   const handleSubmit = (e) => {
@@ -35,29 +38,29 @@ export const ItemDetail = () => {
       //alert("El producto ha sido agregado correctamente");
     } else {
       let busqueda = cart.find(item => item.id === drink.id);
-      if(busqueda){
+      if (busqueda) {
         setmodalMessage("El item ya ha sido añadido con anterioridad, por favor verifique el carrito");
         return;
       }
-      else{
+      else {
         setCart([...cart, { ...drink, prices: price, quantity }]);
       }
-     // alert("El producto ha sido agregado correctamente");
+      // alert("El producto ha sido agregado correctamente");
     }
-    
+
   };
 
   const handleChange = (event) => {
     setPrice(event.target.value);
-    if(document.getElementById("precio6").checked){
+    if (document.getElementById("precio6").checked) {
       setQuantity(6);
     }
-    else{
-      if(document.getElementById("precio12").checked){
+    else {
+      if (document.getElementById("precio12").checked) {
         setQuantity(12);
       }
-      else{
-        if(quantity===0){
+      else {
+        if (quantity === 0) {
           setQuantity(1);
         }
       }
@@ -65,6 +68,11 @@ export const ItemDetail = () => {
   };
 
   return (
+    loading ?
+      <div className="circular-container">
+        <CircularProgress className="circular-progress" />
+      </div>
+      :
     <>
       <div className="col-12 col-xl-6 image">
         <img src={`../${drink.img}`} alt={drink.title} />
@@ -77,13 +85,13 @@ export const ItemDetail = () => {
         {Object.keys(drink).length > 0 ? (
           <form onSubmit={handleSubmit}>
             <div className="form-check mb-3">
-              <ItemCount 
-              drink={drink} 
-              handleChange={handleChange} 
-              setQuantity={setQuantity} 
-              quantity={quantity}
-              price={price}
-              setPrice={setPrice}
+              <ItemCount
+                drink={drink}
+                handleChange={handleChange}
+                setQuantity={setQuantity}
+                quantity={quantity}
+                price={price}
+                setPrice={setPrice}
               />
             </div>
             <div className="form-check mb-3">
