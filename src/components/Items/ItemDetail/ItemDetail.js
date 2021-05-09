@@ -33,6 +33,7 @@ export const ItemDetail = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(price);
     if (Object.entries(cart[0]).length === 0) {
       setCart([{ ...drink, prices: price, quantity }]);
       //alert("El producto ha sido agregado correctamente");
