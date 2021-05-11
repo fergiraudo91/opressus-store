@@ -1,0 +1,31 @@
+.footer__component{
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.item___social-media{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.item___social-media a i{
+    color: white;
+    width: 100px;
+}
+
+@media screen and (max-width: 960px) {
+    .footer__component{
+        display: block;
+        text-align: center;
+        padding-top: 20px;
+    }
+    .footer__item{
+        display: block;
+    }
+}

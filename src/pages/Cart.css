@@ -31,6 +31,10 @@
     margin-top: 20px;
 }
 
+.cart-main{
+    min-height: 100vh;
+}
+
 @media screen and (max-width: 770px) {
     .item-container li{
         font-size: 0.9rem;

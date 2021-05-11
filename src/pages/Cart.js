@@ -29,7 +29,7 @@ export const Cart = () => {
     }
     let prices = cart.map(el => +el.prices);
     return (
-        <div className="container mt-5">
+        <div className="container mt-5 cart-main">
            <h1>Cart</h1> 
            <hr />
            {form ? <BuyForm prices={prices}/> :
